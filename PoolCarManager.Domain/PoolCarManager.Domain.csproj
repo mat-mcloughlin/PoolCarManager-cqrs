@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51B6FB78-E6F0-4158-9A92-F991C2BB8688}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoolCarManager.Domain</RootNamespace>
+    <AssemblyName>PoolCarManager.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicle\NonExistingVehicleException.cs" />
+    <Compile Include="Vehicle\Vehicle.cs" />
+    <Compile Include="Vehicle\VehicleDescription.cs" />
+    <Compile Include="Vehicle\VehicleRegistration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PoolCarManager.EventStore\PoolCarManager.EventStore.csproj">
+      <Project>{C86F5B17-6150-49EF-8E54-8F025BE109EF}</Project>
+      <Name>PoolCarManager.EventStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoolCarManager.Events\PoolCarManager.Events.csproj">
+      <Project>{C0756F2A-39A0-4682-970D-A80FA56D6AA0}</Project>
+      <Name>PoolCarManager.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoolCarManager.Repository\PoolCarManager.Repository.csproj">
+      <Project>{5DB885DF-0886-4906-BEA5-39B717C7B645}</Project>
+      <Name>PoolCarManager.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
