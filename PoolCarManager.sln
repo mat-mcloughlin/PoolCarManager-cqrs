@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolCarManager.EventStore",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolCarManager.ReadModel", "PoolCarManager.ReadModel\PoolCarManager.ReadModel.csproj", "{96C379E0-B35E-4010-8747-03B5B021B73F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolCarManager.Web", "PoolCarManager.Web\PoolCarManager.Web.csproj", "{897CA823-B93C-473B-85B4-3578D06BE8EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,18 @@ Global
 		{87FBD9F8-87CC-4B71-BA6B-32F346307B79}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{87FBD9F8-87CC-4B71-BA6B-32F346307B79}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{87FBD9F8-87CC-4B71-BA6B-32F346307B79}.Release|x86.ActiveCfg = Release|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{897CA823-B93C-473B-85B4-3578D06BE8EC}.Release|x86.Build.0 = Release|Any CPU
 		{96C379E0-B35E-4010-8747-03B5B021B73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96C379E0-B35E-4010-8747-03B5B021B73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96C379E0-B35E-4010-8747-03B5B021B73F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -151,7 +165,7 @@ Global
 		{C86F5B17-6150-49EF-8E54-8F025BE109EF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = PoolCarManager.Console\PoolCarManager.Console.csproj
+		StartupItem = PoolCarManager.Web\PoolCarManager.Web.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -44,7 +44,7 @@
 
         protected void RegisterEvent<TEvent>(Action<TEvent> eventHandler) where TEvent : class, IEvent
         {
-            this.registeredEvents.Add(typeof(TEvent), theEvent => eventHandler(theEvent as TEvent));
+			this.registeredEvents.Add(typeof(TEvent), e => eventHandler(e as TEvent));
         }
 
         protected void Apply(IEvent @event)

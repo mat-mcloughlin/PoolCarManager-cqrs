@@ -1,0 +1,25 @@
+
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>Registration</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			@Each.Model
+				<tr>
+					<td>@Current.Registration</td>
+					<td>@Current.Description</td>
+				</tr>
+			@EndEach
+			</tbody>
+		</table>
+
+	</body>
+</html>
