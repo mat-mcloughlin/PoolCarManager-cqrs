@@ -6,17 +6,14 @@ namespace PoolCarManager.Console
 
     using Autofac;
 
-    using CommandHandlers;
-    
-    using Commands.Vehicle;
     using Core;
-    using EventHandlers;
-    using EventStore;
 
-    using PoolCarManager.CommandHandlers.Vehicle;
-
-    using ReadModel.Vehicle;
-    using Repository;
+    using PoolCarManager.Core.CommandHandlers;
+    using PoolCarManager.Core.CommandHandlers.Vehicle;
+    using PoolCarManager.Core.Commands.Vehicle;
+    using PoolCarManager.Core.EventHandlers;
+    using PoolCarManager.Core.EventStore;
+    using PoolCarManager.Core.Repository;
 
     public class Program
     {

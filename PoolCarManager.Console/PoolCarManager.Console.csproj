@@ -64,33 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PoolCarManager.CommandHandlers\PoolCarManager.CommandHandlers.csproj">
-      <Project>{277B9AE8-2BF7-4287-9390-35D15D63CE85}</Project>
-      <Name>PoolCarManager.CommandHandlers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PoolCarManager.Commands\PoolCarManager.Commands.csproj">
-      <Project>{C0B50BCD-E06F-4120-B4E6-30174BC03D94}</Project>
-      <Name>PoolCarManager.Commands</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PoolCarManager.Core\PoolCarManager.Core.csproj">
       <Project>{87FBD9F8-87CC-4B71-BA6B-32F346307B79}</Project>
       <Name>PoolCarManager.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PoolCarManager.EventHandlers\PoolCarManager.EventHandlers.csproj">
-      <Project>{A2F581B4-9FA7-4483-BA61-861FE2225850}</Project>
-      <Name>PoolCarManager.EventHandlers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PoolCarManager.EventStore\PoolCarManager.EventStore.csproj">
-      <Project>{C86F5B17-6150-49EF-8E54-8F025BE109EF}</Project>
-      <Name>PoolCarManager.EventStore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PoolCarManager.ReadModel\PoolCarManager.ReadModel.csproj">
-      <Project>{96C379E0-B35E-4010-8747-03B5B021B73F}</Project>
-      <Name>PoolCarManager.ReadModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PoolCarManager.Repository\PoolCarManager.Repository.csproj">
-      <Project>{5DB885DF-0886-4906-BEA5-39B717C7B645}</Project>
-      <Name>PoolCarManager.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
