@@ -6,15 +6,13 @@ namespace PoolCarManager.Web.Modules
 
     using Nancy;
 
-    using PoolCarManager.Core.CommandHandlers.Vehicle;
     using PoolCarManager.Core.Commands.Vehicle;
-    using PoolCarManager.Core.EventStore;
     using PoolCarManager.Core.ReadModel.Vehicle;
     using PoolCarManager.Core.Repository;
 
     public class VehicleModule : NancyModule
     {
-        public VehicleModule(IBus bus, IRepository<VehicleIndex> vehicleIndexRepository, IDomainRepository domainRepository)
+        public VehicleModule(IBus bus, IRepository<VehicleIndex> vehicleIndexRepository)
             : base("/Vehicle")
         {
             this.Get["/"] = _ =>
@@ -23,16 +21,15 @@ namespace PoolCarManager.Web.Modules
                 return View["Index", vehicles];
             };
 
-            this.Get["/CreateVehicle"] = _ =>
+            this.Get["/Create"] = _ =>
             {
                 return View["Create"];
             };
 
-            this.Post["/CreateVehicle"] = _ =>
+            this.Post["/Create"] = _ =>
             {
                 var command = new CreateVehicleCommand(Guid.NewGuid(), Request.Form.Registration, Request.Form.Description);
-                var commandHandler = new CreateVehicleCommandHandler(domainRepository);
-                commandHandler.Execute(command);
+                bus.Publish(command);
                 return Response.AsRedirect("/Vehicle");
             };
         }

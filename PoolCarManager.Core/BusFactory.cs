@@ -10,7 +10,7 @@
         public static IBus Create(IocAdapter iocAdapter)
         {
             return BusSetup.StartWith<Conservative>()
-                .Apply<IoCSupport>(s => s.SetAdapter(iocAdapter).SetHandlerInterface(typeof(IEventHandler<>)))
+                .Apply<IoCSupport>(s => s.SetAdapter(iocAdapter).SetHandlerInterface(typeof(IHandler<>)))
                 .Construct();
         }
     }

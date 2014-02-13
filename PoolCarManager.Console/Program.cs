@@ -26,8 +26,7 @@ namespace PoolCarManager.Console
             var builder = new ContainerBuilder();
 
             builder.RegisterGeneric(typeof(MongoDbRepository<>)).As(typeof(IRepository<>));
-            builder.RegisterAssemblyTypes(Assembly.Load("PoolCarManager.EventHandlers")).AsClosedTypesOf(typeof(IEventHandler<>));
-            builder.RegisterAssemblyTypes(Assembly.Load("PoolCarManager.CommandHandlers")).AsClosedTypesOf(typeof(ICommandHandler<>));
+            builder.RegisterAssemblyTypes(Assembly.Load("PoolCarManager.EventHandlers")).AsClosedTypesOf(typeof(IHandler<>));
             builder.Register(x => BusFactory.Create(new AutofacAdapter(x.Resolve<IComponentContext>())));
             builder.RegisterType<DomainRepository>().As<IDomainRepository>();
             

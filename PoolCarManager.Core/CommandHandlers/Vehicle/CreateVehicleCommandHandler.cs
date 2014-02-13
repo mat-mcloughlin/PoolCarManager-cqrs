@@ -4,7 +4,7 @@
     using PoolCarManager.Core.Domain.Vehicle;
     using PoolCarManager.Core.EventStore;
 
-    public class CreateVehicleCommandHandler : ICommandHandler<CreateVehicleCommand>
+    public class CreateVehicleCommandHandler : IHandler<CreateVehicleCommand>
     {
         private readonly IDomainRepository repository;
 

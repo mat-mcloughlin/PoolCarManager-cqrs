@@ -4,7 +4,7 @@
     using PoolCarManager.Core.ReadModel.Vehicle;
     using PoolCarManager.Core.Repository;
 
-    public class VehicleCreatedEventHandler : IEventHandler<VehicleCreatedEvent>
+    public class VehicleCreatedEventHandler : IHandler<VehicleCreatedEvent>
     {
         private readonly IRepository<VehicleIndex> repository;
 
