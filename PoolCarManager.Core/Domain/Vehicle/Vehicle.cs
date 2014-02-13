@@ -32,17 +32,17 @@
             return new Vehicle(id, vehicleRegistration, vehicleDescription);
         }
 
-        public void ChangeDescription(VehicleDescription vehicleDescription)
+        public void ChangeDetails(VehicleRegistration vehicleRegistration, VehicleDescription vehicleDescription)
         {
             this.IsVehicleCreated();
 
-            this.Apply(new ChangeVehicleDescriptionEvent(vehicleDescription.Description));
+            this.Apply(new VehicleDetailsChangedEvent(this.Id, vehicleRegistration.Registration, vehicleDescription.Description));
         }
         
         private void RegisterEvents()
         {
             this.RegisterEvent<VehicleCreatedEvent>(this.OnNewVehicleCreated);
-            this.RegisterEvent<ChangeVehicleDescriptionEvent>(this.OnVehicleUpdated);
+            this.RegisterEvent<VehicleDetailsChangedEvent>(this.OnVehicleUpdated);
         }
 
         private void OnNewVehicleCreated(VehicleCreatedEvent vehicleCreatedEvent)
@@ -52,9 +52,9 @@
             this.description = vehicleCreatedEvent.Description;
         }
 
-        private void OnVehicleUpdated(ChangeVehicleDescriptionEvent changeVehicleDescriptionEvent)
+        private void OnVehicleUpdated(VehicleDetailsChangedEvent vehicleDetailsChangedEvent)
         {
-            this.description = changeVehicleDescriptionEvent.Description;
+            this.description = vehicleDetailsChangedEvent.Description;
         }
 
         private void IsVehicleCreated()

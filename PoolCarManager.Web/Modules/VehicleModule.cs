@@ -7,18 +7,24 @@ namespace PoolCarManager.Web.Modules
     using Nancy;
 
     using PoolCarManager.Core.Commands.Vehicle;
-    using PoolCarManager.Core.ReadModel.Vehicle;
+    using PoolCarManager.Core.Projections.Vehicle;
     using PoolCarManager.Core.Repository;
 
     public class VehicleModule : NancyModule
     {
-        public VehicleModule(IBus bus, IRepository<VehicleIndex> vehicleIndexRepository)
+        public VehicleModule(IBus bus, IRepository<VehicleIndex> vehicleIndexRepository, IRepository<VehicleDetails> vehicleDetailsRepository)
             : base("/Vehicle")
         {
             this.Get["/"] = _ =>
             {
                 var vehicles = vehicleIndexRepository.GetAll();
                 return View["Index", vehicles];
+            };
+
+            this.Get["/{id:guid}"] = args =>
+            {
+                var vehicle = vehicleDetailsRepository.GetByAggregateId(args.id);
+                return View["Details", vehicle];
             };
 
             this.Get["/Create"] = _ =>

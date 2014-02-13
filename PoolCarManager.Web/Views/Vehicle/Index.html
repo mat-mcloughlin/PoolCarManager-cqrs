@@ -6,20 +6,21 @@
 	<body>
 		<table>
 			<thead>
-				<tr>
-					<th>Registration</th>
-					<th>Description</th>
-				</tr>
+			    <tr>
+			        <th>AggregateId</th>
+			        <th>Registration</th>
+			        <th>Description</th>
+			    </tr>
 			</thead>
 			<tbody>
 			@Each.Model
-				<tr>
-					<td>@Current.Registration</td>
-					<td>@Current.Description</td>
-				</tr>
+			    <tr>
+			        <td><a href="/Vehicle/@Current.AggregateId">@Current.AggregateId</a></td>
+			        <td>@Current.Registration</td>
+			        <td>@Current.Description</td>
+			    </tr>
 			@EndEach
 			</tbody>
 		</table>
-
 	</body>
 </html>

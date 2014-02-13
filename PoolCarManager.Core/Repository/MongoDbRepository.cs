@@ -52,6 +52,11 @@
             return this.collection.FindOneByIdAs<TEntity>(id);
         }
 
+        public TEntity GetByAggregateId(Guid id)
+        {
+            return this.collection.AsQueryable().Single(m => m.AggregateId == id);
+        }
+
         private void GetDatabase()
         {
             var client = new MongoClient(this.GetConnectionString());

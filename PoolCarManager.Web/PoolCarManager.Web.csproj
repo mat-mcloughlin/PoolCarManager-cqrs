@@ -93,6 +93,7 @@
   </ProjectExtensions>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Views\Vehicle\Details.html" />
     <Content Include="web.config" />
     <Content Include="Views\Vehicle\Index.html" />
   </ItemGroup>

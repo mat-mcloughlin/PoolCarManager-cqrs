@@ -1,21 +1,25 @@
 ﻿namespace PoolCarManager.Core.EventHandlers.Vehicle
 {
     using PoolCarManager.Core.Events.Vehicle;
-    using PoolCarManager.Core.ReadModel.Vehicle;
+    using PoolCarManager.Core.Projections.Vehicle;
     using PoolCarManager.Core.Repository;
 
     public class VehicleCreatedEventHandler : IHandler<VehicleCreatedEvent>
     {
-        private readonly IRepository<VehicleIndex> repository;
+        private readonly IRepository<VehicleIndex> vehicleIndexRepository;
 
-        public VehicleCreatedEventHandler(IRepository<VehicleIndex> repository)
+        private readonly IRepository<VehicleDetails> vehicleDetailsRepository;
+
+        public VehicleCreatedEventHandler(IRepository<VehicleIndex> vehicleIndexRepository, IRepository<VehicleDetails> vehicleDetailsRepository)
         {
-            this.repository = repository;
+            this.vehicleIndexRepository = vehicleIndexRepository;
+            this.vehicleDetailsRepository = vehicleDetailsRepository;
         }
 
         public void Execute(VehicleCreatedEvent @event)
         {
-            this.repository.Insert(new VehicleIndex { AggregateId = @event.Id, Description = @event.Description, Registration = @event.Registration });
+            this.vehicleIndexRepository.Insert(new VehicleIndex { AggregateId = @event.Id, Description = @event.Description, Registration = @event.Registration });
+            this.vehicleDetailsRepository.Insert(new VehicleDetails { AggregateId = @event.Id, Description = @event.Description, Registration = @event.Registration });
         }
     }
 }

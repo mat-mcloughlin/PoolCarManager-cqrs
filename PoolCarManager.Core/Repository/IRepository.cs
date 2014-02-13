@@ -17,5 +17,7 @@
         IList<TEntity> GetAll();
 
         TEntity GetById(Guid id);
+
+        TEntity GetByAggregateId(Guid id);
     }
 }
