@@ -48,13 +48,13 @@
     <Compile Include="Domain\Vehicle\VehicleRegistration.cs" />
     <Compile Include="EventHandlers\Vehicle\VehicleCreatedEventHandler.cs" />
     <Compile Include="EventStore\Aggregate.cs" />
-    <Compile Include="EventStore\DomainRepository.cs" />
     <Compile Include="EventStore\Exceptions\AggregateDeletedException.cs" />
     <Compile Include="EventStore\Exceptions\AggregateNotFoundException.cs" />
     <Compile Include="EventStore\Exceptions\AggregateVersionException.cs" />
     <Compile Include="EventStore\Exceptions\UnregisteredDomainEventException.cs" />
-    <Compile Include="EventStore\IAggregate.cs" />
     <Compile Include="EventStore\IDomainRepository.cs" />
+    <Compile Include="EventStore\DomainRepository.cs" />
+    <Compile Include="EventStore\IAggregate.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\Vehicle\VehicleDetailsChangedEvent.cs" />
@@ -68,7 +68,6 @@
     <Compile Include="Repository\MongoDbRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="EventStore\packages.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
